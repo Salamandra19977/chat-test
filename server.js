@@ -17,7 +17,9 @@ const loginFile = fs.readFileSync(path.join(__dirname, "static", "login.html"))
 const server = http.createServer((req, res) => {
     if (req.method === "GET") {
         switch(req.url) {
-            case "/style.css": return res.end(styleFile)
+            case "/style.css":
+                res.writeHead(200, { "Content-Type": "text/css" })
+                return res.end(styleFile)
             case "/register": return res.end(registerHtmlFile)
             case "/auth.js": return res.end(authScript)
             case "/login": return res.end(loginFile)
