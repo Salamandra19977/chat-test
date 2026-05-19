@@ -3,6 +3,7 @@ const path = require("path")
 const fs = require("fs")
 const db = require("./database")
 const cookie = require("cookie")
+require("dotenv").config()
 
 const validAuthTokens = []
 
@@ -33,7 +34,11 @@ const server = http.createServer((req, res) => {
     }
 })
 
-server.listen(3000)
+const PORT = process.env.PORT || 3000
+
+server.listen(PORT, "0.0.0.0", () => {
+    console.log("Server running on port:", PORT)
+})
 
 const { Server } = require("socket.io")
 const io = new Server(server)
