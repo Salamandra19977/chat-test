@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1 class="header">Register</h1>
+        <form class="register_form" id="register_form">
+            <div class="form_container">
+                <label for="login">Login:</label>
+                <input type="text" id="login" name="login">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password">
+                <label for="passwordRepeat">Repeat Password:</label>
+                <input type="password" name="passwordRepeat" id="passwordRepeat">
+                <button type="submit" class="register_form_btn">Register</button>
+            </div>
+        </form>
+        <script src="https://cdn.socket.io/4.5.3/socket.io.min.js" integrity="sha384-WPFUvHkB1aHA5TDSZi6xtDgkF0wXJcIIxXhC6h8OT8EH3fC5PWro5pWJ1THjcfEi" crossorigin="anonymous"></script>
+        <script src="auth.js"></script>
+    </main>
+</body>
+</html>
